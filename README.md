@@ -11,7 +11,7 @@ import {
   subBusinessDays,
   businessDaysBetween,
   nextBusinessDay,
-} from "business-days";
+} from "@p-vbordei/business-days";
 
 addBusinessDays(new Date(2026, 4, 22), 1);
 // Friday + 1 → Monday (skips Sat+Sun)
@@ -28,7 +28,7 @@ isBusinessDay(date, { weekends: [5, 6] });  // Fri-Sat weekend (e.g. Middle East
 ## Install
 
 ```sh
-npm install business-days
+npm install @p-vbordei/business-days
 ```
 
 ## API
