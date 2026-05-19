@@ -2,6 +2,10 @@
 
 [![ci](https://github.com/p-vbordei/business-days/actions/workflows/ci.yml/badge.svg)](https://github.com/p-vbordei/business-days/actions/workflows/ci.yml)
 
+[![npm](https://img.shields.io/npm/v/%40p-vbordei%2Fbusiness-days.svg)](https://www.npmjs.com/package/@p-vbordei/business-days)
+[![downloads](https://img.shields.io/npm/dm/%40p-vbordei%2Fbusiness-days.svg)](https://www.npmjs.com/package/@p-vbordei/business-days)
+[![bundle](https://img.shields.io/bundlejs/size/%40p-vbordei%2Fbusiness-days)](https://bundlejs.com/?q=%40p-vbordei%2Fbusiness-days)
+
 Add and subtract working days, count business days between two dates, with configurable weekends and holidays. Zero dependencies. Works with the built-in `Date` — no date-fns, no Day.js.
 
 ```ts
