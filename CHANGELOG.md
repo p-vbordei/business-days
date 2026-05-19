@@ -6,6 +6,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-05-19
+
+### Fixed
+- `businessDaysBetween(a, b) === -businessDaysBetween(b, a)` now holds in all cases. Previously the half-open interval semantics differed slightly between forward and backward traversal (off-by-one when the endpoints were business days).
+
+### Added
+- Property-based tests (`fast-check`).
+
 ## [0.2.0] - 2026-05-19
 
 ### Added

@@ -89,18 +89,22 @@ export function businessDaysBetween(from: Date, to: Date, opts: BusinessDayOptio
   const a = new Date(from.getFullYear(), from.getMonth(), from.getDate());
   const b = new Date(to.getFullYear(), to.getMonth(), to.getDate());
   if (a.getTime() === b.getTime()) return 0;
-  const direction = a < b ? 1 : -1;
+  const sign = a < b ? 1 : -1;
+  const lo = a < b ? a : b;
+  const hi = a < b ? b : a;
   const weekends = opts.weekends ?? [0, 6];
   const holidays = buildHolidaySet(opts.holidays);
-  const cursor = new Date(a.getTime());
+  // Always iterate the canonical (lo, hi] interval, then sign by direction.
+  // This guarantees `businessDaysBetween(a, b) === -businessDaysBetween(b, a)`.
+  const cursor = new Date(lo.getTime());
   let count = 0;
-  while (cursor.getTime() !== b.getTime()) {
-    cursor.setDate(cursor.getDate() + direction);
+  while (cursor.getTime() < hi.getTime()) {
+    cursor.setDate(cursor.getDate() + 1);
     if (!weekends.includes(cursor.getDay()) && !isHolidayFn(cursor, holidays)) {
-      count += direction;
+      count++;
     }
   }
-  return count;
+  return count * sign;
 }
 
 /**
