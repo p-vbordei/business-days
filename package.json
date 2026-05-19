@@ -1,0 +1,24 @@
+{
+  "name": "business-days",
+  "version": "0.1.0",
+  "description": "Add/subtract working days, count business days between two dates, with configurable weekends and holidays. Zero dependencies.",
+  "keywords": ["business", "working-days", "weekday", "weekend", "holiday", "date"],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": { "node": ">=18" },
+  "author": { "name": "Vlad Bordei", "email": "bordeivlad@gmail.com", "url": "https://github.com/p-vbordei" },
+  "license": "Apache-2.0",
+  "repository": { "type": "git", "url": "https://github.com/p-vbordei/business-days.git" },
+  "bugs": { "url": "https://github.com/p-vbordei/business-days/issues" },
+  "homepage": "https://github.com/p-vbordei/business-days#readme",
+  "devDependencies": { "typescript": "^5.5.0", "vitest": "^2.0.0" }
+}
