@@ -1,5 +1,7 @@
 # business-days
 
+[![ci](https://github.com/p-vbordei/business-days/actions/workflows/ci.yml/badge.svg)](https://github.com/p-vbordei/business-days/actions/workflows/ci.yml)
+
 Add and subtract working days, count business days between two dates, with configurable weekends and holidays. Zero dependencies. Works with the built-in `Date` — no date-fns, no Day.js.
 
 ```ts
